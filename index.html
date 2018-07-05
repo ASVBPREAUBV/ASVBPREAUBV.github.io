@@ -1,1 +1,153 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>4 Buttons</title>
+</head>
+<body>
+<button class="button button-1">Button 1</button>
+<button class="button button-2">Button 2</button>
+<button class="button button-3">Button 3</button>
+<button class="button button-4">Button 4</button>
+</body>
+<style>
+    body {
+        background-color: whitesmoke;
+    }
+
+    .button {
+        position: relative;
+        padding: 10px;
+        background-color: whitesmoke;
+        border: 4px solid #141414;
+        color: #141414;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 300px;
+        height: 75px;
+        cursor: pointer;
+        margin: 5px;
+        background: none;
+        z-index: 0;
+    }
+
+    .button-1:hover {
+        -webkit-transition: 0.2s ease-in;
+        background-color: #141414;
+        color: whitesmoke;
+    }
+
+    .button-2:hover {
+        color: whitesmoke;
+    }
+
+    .button-2:before {
+        content: "";
+        position: absolute;
+        background-color: #141414;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: -1;
+        transition: 0.2s ease-in-out;
+        -o-transition: 0.2s ease-in-out;
+        -ms-transition: 0.2s ease-in-out;
+        -moz-transition: 0.2s ease-in-out;
+        -webkit-transition: 0.2s ease-in-out;
+    }
+
+    .button-2:hover:before {
+        bottom: 0;
+    }
+
+    .button-3 {
+        position: relative;
+        padding: 10px;
+        background: none;
+        color: #141414;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 300px;
+        height: 75px;
+        cursor: pointer;
+        margin: 5px;
+        z-index: 0;
+
+        transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+    }
+
+    .button-3:hover {
+        color: whitesmoke;
+    }
+
+    .button-3:before {
+        content: "";
+        position: absolute;
+        background-color: #141414;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        clip-path: polygon(-223px 223px, -37px 37px, 150px 237px, -37px 350px);
+
+    }
+
+    .button-3:hover:before {
+        transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        clip-path: polygon(-37px 37px, 150px -150px, 350px 37px, 150px 237px);
+
+    }
+
+    .button-4 {
+        background: none;
+    }
+
+    .button-4:before {
+        content: "";
+        position: absolute;
+        background-color: #141414;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        -webkit-animation: button-4-out 1s;
+        clip-path: polygon(-223px 223px, -37px 37px, 150px 237px, -37px 350px);
+    }
+
+    .button-4:hover:before {
+        -webkit-animation: button-4-in 1s;
+    }
+
+    @-webkit-keyframes button-4-out {
+        from {
+            clip-path: polygon(-37px 37px, 150px -150px, 350px 37px, 150px 237px);
+        }
+        to {
+            clip-path: polygon(-223px 223px, -37px 37px, 150px 237px, -37px 350px);
+        }
+
+    }
+
+    @-webkit-keyframes button-4-in {
+        from {
+            clip-path: polygon(-223px 223px, -37px 37px, 150px 237px, -37px 350px);
+        }
+        to {
+            clip-path: polygon(-37px 37px, 150px -150px, 350px 37px, 150px 237px);
+        }
+    }
+</style>
+</html>
